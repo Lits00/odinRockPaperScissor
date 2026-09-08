@@ -1,7 +1,7 @@
 function getComputerChoice(){
     let computerChoice = "";
     randNum = Math.floor(Math.random() * 3)
-    console.log(randNum)
+    // console.log(randNum)
     switch (randNum) {
         case 0:
             computerChoice = "rock";
@@ -15,3 +15,10 @@ function getComputerChoice(){
     }
     return computerChoice;
 }
+
+function getHumanChoice(){
+    let userChoice = prompt("Enter choice: ")
+    console.log(userChoice)
+}
+
+getHumanChoice();
