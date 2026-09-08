@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(){
     let computerChoice = "";
     randNum = Math.floor(Math.random() * 3)
@@ -17,8 +20,37 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let userChoice = prompt("Enter choice: ")
-    console.log(userChoice)
+    let userChoice = prompt("Enter choice: ").toLowerCase();
+    // console.log(userChoice);
+    return userChoice;
 }
 
-getHumanChoice();
+// getHumanChoice();
+
+function playRound(humanChoice, computerChoice){
+    let winner;
+    // console.log("humanChoice: " + humanChoice)
+    // console.log("computerChoice: " + computerChoice)
+    if(humanChoice === computerChoice){
+        return "draw";
+    } else if(humanChoice == "rock" && computerChoice == "scissor"){
+        humanScore++
+        winner = "Human"
+    } else if(humanChoice == "paper" && computerChoice == "rock"){
+        humanScore++
+        winner = "Human"
+    } else if(humanChoice == "scissor" && computerChoice == "paper"){
+        humanScore++
+        winner = "Human"
+    } else {
+        computerScore++
+        winner = "Computer"
+    }
+    // console.log("Human: " + humanScore)
+    // console.log("Computer: " + computerScore)
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
